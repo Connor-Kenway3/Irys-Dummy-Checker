@@ -1,0 +1,345 @@
+/* Font face */
+@font-face {
+  font-family: "SKRAPPA Bold";
+  src: url("./fonts/SKRAPPABold.woff2") format("woff2");
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Exo", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Headings */
+#irys {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  transform: scaleX(2);
+  font-family: "SKRAPPA Bold";
+  color: #51ffd6;
+  margin: 0;
+}
+
+#airdrop_simulator {
+  text-align: center;
+  font-size: clamp(1.5rem, 4.5vw, 3rem);
+  transform: scaleX(1.5);
+  font-family: "SKRAPPA Bold";
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 1% 0;
+}
+
+/* Layout Containers */
+header {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  height: 95vh;
+  width: 95vw;
+  max-width: 800px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form styling */
+#allocationForm {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  gap: 0.8rem;
+}
+
+/* Inputs & Selects */
+input,
+select {
+  text-align: center;
+  border: 2px solid #51ffd6;
+  border-radius: 4px;
+  background-color: black;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+/* Specific heights */
+#address {
+  height: 2.5rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+#role {
+  width: 40%;
+}
+
+#username {
+  width: 55%;
+}
+
+input::placeholder {
+  color: #888888;
+}
+
+select option {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Button */
+button {
+  font-family: "SKRAPPA Bold";
+  background-color: transparent;
+  color: #51ffd6;
+  border: 2px solid #51ffd6;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #51ffd6;
+  color: #000000;
+}
+
+/* Scale text class */
+.scale-text {
+  display: inline-block;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  transform: scaleX(1.7);
+  letter-spacing: 0.02em;
+}
+
+/* Result */
+#result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Autofill override (for Chrome/Edge) */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px black inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Focus/Active States */
+input:focus,
+select:focus,
+input:active,
+select:active {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #51ffd6;
+}
+
+/* Global box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+
+select {
+  padding-right: 2rem !important;
+  /* space for arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%2351ffd6" height="10" viewBox="0 0 20 20" width="10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 20,0 10,10"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.7rem;
+}
+
+#allocation_text {
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 2rem);
+  transform: scaleX(1.8);
+  font-family: "SKRAPPA Bold";
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin-top: 5%;
+  margin-bottom: 4%;
+}
+
+.allocation-box {
+  width: 35vw;
+  background-color: #111;
+  /* dark background */
+  border: 2px solid #51ffd6;
+  border-radius: 12px;
+  padding: 1rem 2rem 1.5rem 2rem;
+  margin: 0 auto;
+  /* center horizontally */
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.6rem;
+  font-family: "Exo", sans-serif;
+  color: #51ffd6;
+}
+
+.divider {
+  border: none;
+  border-bottom: 2px solid #51ffd6;
+  margin-bottom: 1rem;
+}
+
+.allo_data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  text-align: left;
+  font-weight: 500;
+}
+
+.value {
+  text-align: right;
+  font-weight: 700;
+  color: #51ffd6;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #51ffd6;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: "Exo", sans-serif;
+  font-size: clamp(1rem, 0.8vw, 0.8rem);
+  user-select: none;
+  box-sizing: border-box;
+  z-index: 1000; /* on top */
+}
+
+footer a {
+  color: #51ffd6;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+.simulation-note {
+  color: #ffffff;
+  font-weight: normal;
+  margin-top: 0.4rem;
+  display: inline-block; /* optional, in case you want it lighter */
+}
+
+/* Add bottom padding to container so content is not hidden behind footer */
+.container {
+  padding-bottom: 3.5rem; /* height of footer + some spacing */
+}
+
+
+/* Responsive: Mobile adjustments */
+@media (max-width: 600px) {
+  header {
+    margin-bottom: 1rem;
+  }
+
+  #irys {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+  }
+
+  #airdrop_simulator {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  #allocationForm {
+    width: 70vw;
+    gap: 0.6rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  #role,
+  #username {
+    width: 100%;
+    min-height: 2.5rem;
+  }
+
+  .scale-text {
+    font-size: 1.2rem;
+    transform: scaleX(1.5);
+  }
+
+  #allocation_text {
+    font-size: clamp(1.2rem, 4.5vw, 2.5rem);
+  }
+
+  .allocation-box {
+    width: 70vw;
+    padding: 1rem 1.3rem 1.3rem 1.3rem;
+  }
+
+  .label,
+  .value {
+    display: inline-block;
+    /* ensure transform works properly */
+    transform: scale(0.85);
+  }
+  footer {
+  font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+  }
+}

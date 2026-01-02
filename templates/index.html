@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Irys Airdrop Simulator</title>
+  <link rel="stylesheet" href="../static/style.css" />
+  <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <p id="irys">IRYS</p>
+      <p id="airdrop_simulator">AIRDROP SIMULATOR</p>
+    </header>
+
+    <form id="allocationForm">
+      <input type="text" id="address" name="address" placeholder="Enter address" />
+
+      <div class="row">
+        <select id="role" name="role">
+          <option value="none" selected hidden>Discord Role</option>
+          <option value="deshi">Deshi</option>
+          <option value="shugo">Shugo</option>
+          <option value="senshi">Senshi</option>
+          <option value="shihan">Shihan</option>
+        </select>
+
+        <input type="text" id="username" name="username" placeholder="X handle (without @)" />
+      </div>
+
+      <button type="submit"><span class="scale-text">CHECK ALLOCATION</span></button>
+    </form>
+
+    <div id="result" class="result">
+      <p id="allocation_text">YOUR ALLOCATION</p>
+      <div id="allo" class="allocation-box">
+        <div id="totalAllocation" class="big-number">0.00</div>
+        <hr class="divider" />
+        <div class="allo_data">
+          <span class="label">Address Allocation:</span>
+          <span class="value" id="addressAllocation">0.0</span>
+        </div>
+        <div class="allo_data">
+          <span class="label">X Allocation:</span>
+          <span class="value" id="xAllocation">0.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+  <p>
+    Made for fun, and for the community by
+    <a href="https://twitter.com/connor_kenway3" target="_blank" rel="noopener noreferrer">
+      @connor_kenway3
+    </a>
+    <br />
+    <span class="simulation-note">(These are simulations and not real allocations)</span>
+  </p>
+</footer>
+
+
+  <script src="/static/script.js"></script>
+</body>
+
+
+</html>
